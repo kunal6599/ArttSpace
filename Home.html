@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+      position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+      cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* Container for image text */
+    .caption-container {
+      text-align: center;
+      background-color: #222;
+      padding: 2px 16px;
+      color: white;
+    }
+
+    .row:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+      float: left;
+      width: 14.28%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+      opacity: 0.9;
+    }
+
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
+
+    h2 {
+      text-align: center;
+      font-family: courier;
+    }
+    .parent {
+      text-align: center;
+    }
+    .ul {
+      display: inline-block;
+      text-align: left;
+    }
+    li {
+      line-height: 1.6;
+    }
+  </style>
+  <body
+    background="petal-heart-pattern-line-color-romantic-810385-pxhere.com.jpg"
+  >
+    <h2 class="caption-container">A R T T S P A C E</h2>
+
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 7</div>
+        <img src="Classical_Dancer.jpg" style="width: 20%" />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 7</div>
+        <img src="Free_Sketch.jpeg" style="width: 20%" />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 7</div>
+        <img
+          src="Hyper_Realistic_Pencil_Sketch.JPG"
+          style="width: 20%"
+        />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 7</div>
+        <img src="Lion_Potrait_Rangoli.jpeg" style="width: 35%" />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">5 / 7</div>
+        <img src=" potrait_rangoli.JPG" style="width: 20%" />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">6 / 7</div>
+        <img src=" Strawberry.JPG" style="width: 20%" />
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">7 / 7</div>
+        <img src=" Mother_Teresa.jpeg" style="width: 20%" />
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img
+            class="demo cursor"
+            src=" Classical_Dancer.jpg"
+            style="width: 50%"
+            onclick="currentSlide(1)"
+            alt="Classical Dancer"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src=" Free_Sketch.jpeg"
+            style="width: 55%"
+            onclick="currentSlide(2)"
+            alt="Free Style Sketch"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src=" Hyper_Realistic_Pencil_Sketch.JPG"
+            style="width: 57%"
+            onclick="currentSlide(3)"
+            alt="Hyper Realistic Pencil Sketch"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src=" Lion_Potrait_Rangoli.jpeg"
+            style="width: 100%"
+            onclick="currentSlide(4)"
+            alt="Lion Potrait Rangoli"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src=" potrait_rangoli.JPG"
+            style="width: 60%"
+            onclick="currentSlide(5)"
+            alt="Potrait Rangoli"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src=" Strawberry.JPG"
+            style="width: 55%"
+            onclick="currentSlide(6)"
+            alt="Strawberry"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src=" Mother_Teresa.jpeg"
+            style="width: 56%"
+            onclick="currentSlide(7)"
+            alt="Realistic Rangoli"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="parent">
+        <h2 class="caption-container">Our vision are...</h2>
+      <ul class="ul" style="align-content: center">
+        <h3>
+          <li>Art from Heart</li>
+          <li>Create Together</li>
+          <li>Space of Strokes</li>
+          <br />
+        </h3>
+      </ul>
+    </div>
+    <div class="parent">
+        <h2 class="caption-container" style="line-height: 1">Special enrollment offers</h2>
+      <h2 style="font-size: small">On registering before 5th of may ..</h2>
+      <ul class="ul" style="align-content: center">
+        <h3>
+          <li>Pursue course of rangoli art at just ₹2,500</li>
+          <li>Sketching course at just ₹1000</li>
+          <li>Color Pencil course at just ₹1300</li>
+          <li>Painting course at just ₹1000</li>
+          <br />
+        </h3>
+      </ul>
+    </div>
+    <div>
+        Name of the Class: ArttSpace
+        <br />
+        Duration: Everday/Weekends
+        <br />
+        Time: 90 mins
+        <ul>
+        <li>Rangoli
+            <ul>
+                <li>Potrait Rangoli( Grid Method)</li>
+                <li>Basic Level</li>
+                <li> Advance Level</li>
+            </ul>
+        </li>
+
+
+        <li>Sketching
+            <ul>
+                <li>Basic Level ( Grid Method)</li>
+                <li> Advance Level</li>
+                <li>Realistic</li>
+                </ul>
+            </li>
+        <li>Color Pencil
+            <ul>
+            <li>Basic Level ( Grid Method)</li>
+            <li> Advance Level</li>
+            <li>Realistic</li>
+            </ul>
+        </li>
+        <li>Painting
+            <ul>
+            <li>Poster Colour</li>
+            <li>Acrytic Colour</li>
+            <li>Water Colour</li>
+            </ul>
+            </li>
+            </ul>
+            </div>
+    </div>
+    <div style="float:right; padding:10px">
+        Created by:
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        <br />
+        <br />
+        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        K u n a l
+         &nbsp; &nbsp;
+        M a l e k a r
+    </div>
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName('mySlides');
+        let dots = document.getElementsByClassName('demo');
+        let captionText = document.getElementById('caption');
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(' active', '');
+        }
+        slides[slideIndex - 1].style.display = 'block';
+        dots[slideIndex - 1].className += ' active';
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+      }
+    </script>
+  </body>
+</html>
